@@ -1,0 +1,93 @@
+aside{
+    position: relative;
+    width: 15%;
+    height: 100vh;
+    border-radius: 0 50% 0 0 / 0 15% 0 0;
+    background-color: #0099ff;
+    ul{
+        position: absolute;
+        top:20%;
+        left:50%;
+        transform: translateX(-50%);
+        width: 100%;
+        list-style: none;
+        li{
+            position: relative;
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 0;
+            cursor: pointer;
+            &::before{
+                content: '';
+                position: absolute;
+                bottom:0;
+                left:0;
+                width:0;
+                height: 1px;
+                background-color: #ffffff;
+                transition: width .4s ease-in-out;
+            }
+            &:hover::before{
+                width: 100%
+            }
+
+        }
+    }
+}
+nav{
+    position: absolute;
+    top:2%;
+    right: 0;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    #avatar{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #0099ff;
+        text-align: center;
+        line-height: 50px;
+        color:#ffffff;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 2px 2px 10px #7c7c7c;
+    }
+
+    ul{
+        display: none;
+        position: relative;
+        list-style: none;
+        width: 80%;
+        border:1px solid #0099ff;
+        margin-top: 10px;
+        li{
+            button{
+                width: 100%;
+                height: 100%;
+                border:none;
+                padding: 10px;
+                background-color: #ffffff;
+                font-size: 1.1em;
+            }
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            left:50%;
+            top:0;
+            transform: translate(-50%,-50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            background-color: #0099ff;
+            z-index: -1;
+
+        }
+    }
+}
+.visible{
+    display: block
+}
