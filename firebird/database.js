@@ -45,6 +45,17 @@ class Database {
             })
         })
     }
+    getPharmacyName(){
+        return new Promise((resolve, reject) => {
+            this.db.query(`SELECT NAZW1 FROM FIRM`, (err, result) => {
+                if (err) {
+                    reject(err)
+                    return
+                }
+                resolve(result)
+            })
+        })
+    }
     disconnect(){
         this.db.detach()
     }

@@ -17,7 +17,12 @@ Router.get('/:rxID',isProtected, async (req,res,next)=>{
         const dbPath = dbList[user.pharmacy].path;
         const firebirdInstance = new firebirdDB(process.env.FIREBIRDSERVER,dbPath,process.env.FIREBIRDUSERNAME,process.env.FIREBIRDPASSWORD);
         await firebirdInstance.connect()
-        const result = await firebirdInstance.query(req.params.rxID);
+        const rxData = await firebirdInstance.query(req.params.rxID);
+        const pharamcyName = await firebirdInstance.getPharmacyName();
+        const result = {
+            rxData,
+            pharamcyName
+        }
         firebirdInstance.disconnect()
         res.status(200).json({data:result})
     } catch (error) {

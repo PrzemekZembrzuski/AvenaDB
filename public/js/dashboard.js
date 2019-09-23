@@ -1,5 +1,7 @@
 // Open avatar list menu
 const avatarMenu = document.querySelector('#avatar ~ ul')
+const pharamcyNameTag = document.querySelector('#pharmacyName');
+
 
 const updateContent = () => {
     const path = window.location.pathname.slice(1);
@@ -41,13 +43,15 @@ document.querySelector('#search > button').addEventListener('click',async e=>{
     }
     const response = await fetch(`${window.location.origin}/rx/${rxID}`);
     const { data } = await response.json();
+    const {rxData,pharamcyName} = data
+    pharamcyNameTag.innerText = pharamcyName[0]['NAZW1']
     const table = document.querySelector('div[data-id="recepty"] > table > tbody');
     table.innerHTML='';
-    if(data.length === 0 ){
+    if(rxData.length === 0 ){
         console.log('no data')    
         return 
     }
-    data.map(item => {
+    rxData.map(item => {
         let newRow = table.insertRow();
         Object.values(item).map(value => {
             let newCell = newRow.insertCell()
