@@ -1,0 +1,30 @@
+@import 
+url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+div[data-id="recepty"] > table{
+   width:100%;
+   border-collapse: collapse;
+   th,td{
+     padding: 15px 10px;
+   }
+   thead{
+
+   th{
+     text-align:left;
+     color:#000000c2;
+     }
+   }
+   tbody{
+     tr{
+       border-bottom: 2px solid #3333332e;
+       &:hover{
+         background-color:#9c9c9c17;
+       }
+     }
+     td{
+       color:#333333e8;
+       max-width:200px;
+       overflow-wrap:break-word;
+     }
+   }
+}

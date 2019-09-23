@@ -6,18 +6,46 @@
 </head>
 <body>
     <nav>
-        <div id="avatar">PZ</div>
+        <div id="avatar">🏠</div>
         <ul>
             <li><button id='logout'>Wyloguj</button></li>
         </ul>
     </nav>
     <aside>
         <ul>
-            <li>Recepty</li>
-            <li>Zakupy</li>
+            <li><a href="">Recepty</a></li>
         </ul>
     </aside>
-    <% include ../partials/scripts %>
+    <div id="content">
+        <div class="contentItem" data-id="recepty">
+            <div id="search">
+                <input type="text" name="" id="">
+                <button>Szukaj</button>
+            </div>
+            <table>
+                <thead>
+                  <tr>
+                    <th>NAZWU</th>
+                    <th>TOWRNAZWU</th>
+                    <th>NRKLN</th>
+                    <th>POZRP</th>
+                    <th>NRORC</th>
+                    <th>KODR1</th>
+                    <th>KODR2</th>
+                    <th>KODR3</th>
+                    <th>KODR4</th>
+                    <th>DGAKT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+             
+             </table>
+             
+        </div>
+    </div>
+    <% include ../partials/commonScripts %>
     <script src="/js/dashboard.js"></script>
 </body>
 </html>

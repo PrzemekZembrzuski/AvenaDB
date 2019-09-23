@@ -1,23 +1,23 @@
 const jwt =  require('jsonwebtoken');
+const tokenExtract = require('../utils/tokenExtract');
 
+const {encode} = require('../utils/message');
 
-
-const protected = async (req, res, next) => {
-    const cookies  = req.headers.cookie ? req.headers.cookie : undefined;
-    const cookiesArray = cookies ? cookies.split('=') : undefined;
-    const token = cookiesArray ? cookiesArray[cookiesArray.indexOf('token')+1] : null
+const isProtected = async (req, res, next) => {
+    const encodedMsg = encode('zaloguj się')
+    const token = tokenExtract(req)
     if(!token){
-       return res.status(403).redirect('/login');
+       return res.status(403).redirect(`/login?msg=${encodedMsg}`);
     }
     try {
-        const tokenVerified = jwt.verify(token,process.env.SECRETKEY)
+        const tokenVerified = jwt.verify(token,process.env.JWTSECRET)
         if(tokenVerified.exp > Math.floor(Date.now()/1000)){
             return next()
         }
-        res.status(403).redirect('/login')
+        return res.status(403).redirect(`/login?msg=${encodedMsg}`);
     } catch (error) {
-        console.log(error)
+        next({ message: error, status: 400 })
     }
 }
 
-module.exports = protected
+module.exports = isProtected

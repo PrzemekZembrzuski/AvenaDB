@@ -27,9 +27,11 @@ app.use(cookieParser())
 
 
 app.use(router)
-
+app.use((req,res)=>{
+    res.status(404).redirect('/')
+})
 app.use((error,req,res,next)=>{
-    const {message, status} = error;
+    const {message, status = 200} = error;
     res.status(status).json({error:message})
 })
 app.listen(port,()=>{

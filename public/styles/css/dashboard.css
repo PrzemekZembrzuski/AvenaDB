@@ -1,8 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+div[data-id="recepty"] > table {
+  width: 100%;
+  border-collapse: collapse; }
+  div[data-id="recepty"] > table th, div[data-id="recepty"] > table td {
+    padding: 15px 10px; }
+  div[data-id="recepty"] > table thead th {
+    text-align: left;
+    color: #000000c2; }
+  div[data-id="recepty"] > table tbody tr {
+    border-bottom: 2px solid #3333332e; }
+    div[data-id="recepty"] > table tbody tr:hover {
+      background-color: #9c9c9c17; }
+  div[data-id="recepty"] > table tbody td {
+    color: #333333e8;
+    max-width: 200px;
+    overflow-wrap: break-word; }
+
 aside {
   position: relative;
-  width: 15%;
+  width: 10%;
   height: 100vh;
-  border-radius: 0 50% 0 0 / 0 15% 0 0;
+  border-radius: 0 50% 0 0 / 0 10% 0 0;
   background-color: #0099ff; }
   aside ul {
     position: absolute;
@@ -14,8 +32,8 @@ aside {
     aside ul li {
       position: relative;
       width: 100%;
+      height: 50px;
       text-align: center;
-      color: #ffffff;
       font-weight: bold;
       padding: 10px 0;
       cursor: pointer; }
@@ -30,6 +48,12 @@ aside {
         transition: width .4s ease-in-out; }
       aside ul li:hover::before {
         width: 100%; }
+      aside ul li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #ffffff; }
 
 nav {
   position: absolute;
@@ -74,6 +98,16 @@ nav {
       height: 10px;
       background-color: #0099ff;
       z-index: -1; }
+
+#content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  height: 85%; }
+
+.contentItem {
+  display: none; }
 
 .visible {
   display: block; }

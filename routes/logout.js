@@ -1,8 +1,8 @@
 const Router = require('express').Router()
 
 
-Router.get('/', (req, res) => {
-    res.status(200).cookie('token',undefined).redirect('/login')
+Router.get('/', (req, res) => {  
+    res.status(204).clearCookie('token').end();
 })
 
 
