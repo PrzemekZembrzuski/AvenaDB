@@ -107,6 +107,24 @@ nav{
 .contentItem{
     display: none;
 }
+.div[data-id="recepty"]{
+    h1{
+        margin:0 0 20px 0;
+    }
+    #search{
+        input{
+            width: 300px;
+            height: 25px;
+            margin: 10px;
+        }
+        button{
+            border: none;
+            background-color: #0099ff;
+            padding: 5px;
+            color:#ffffff;
+        }
+    }
+}
 .visible{
     display: block
 }

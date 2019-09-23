@@ -48,7 +48,12 @@ document.querySelector('#search > button').addEventListener('click',async e=>{
     const table = document.querySelector('div[data-id="recepty"] > table > tbody');
     table.innerHTML='';
     if(rxData.length === 0 ){
-        console.log('no data')    
+        new Noty({
+            theme: 'nest',
+            type: 'error',
+            text: 'Brak danych',
+            timeout: 1500
+        }).show();    
         return 
     }
     rxData.map(item => {
