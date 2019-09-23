@@ -109,15 +109,15 @@ nav {
 .contentItem {
   display: none; }
 
-.div[data-id="recepty"] h1 {
+div[data-id="recepty"] h1 {
   margin: 0 0 20px 0; }
 
-.div[data-id="recepty"] #search input {
+div[data-id="recepty"] #search input {
   width: 300px;
   height: 25px;
   margin: 10px; }
 
-.div[data-id="recepty"] #search button {
+div[data-id="recepty"] #search button {
   border: none;
   background-color: #0099ff;
   padding: 5px;
